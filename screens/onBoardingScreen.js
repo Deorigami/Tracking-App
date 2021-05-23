@@ -1,3 +1,4 @@
+import { LinearGradient } from "expo-linear-gradient";
 import React from "react";
 import {
   Image,
@@ -45,7 +46,8 @@ const onBoardingScreen = ({ navigation }) => {
         style={{ top: "43%" }}
         onPress={() => navigation.navigate("Login")}
       >
-        <View
+        <LinearGradient
+          colors={["#786DF5", "#A79EFF"]}
           style={{
             width: 280,
             height: 50,
@@ -56,7 +58,7 @@ const onBoardingScreen = ({ navigation }) => {
           }}
         >
           <Text style={{ fontSize: 17, color: "#fff" }}>Next</Text>
-        </View>
+        </LinearGradient>
       </TouchableOpacity>
     </View>
   );
