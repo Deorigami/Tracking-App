@@ -1,0 +1,9 @@
+<svg width="75" height="24" viewBox="0 0 75 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+<text id="TraqIt" fill="url(#paint0_linear)" xml:space="preserve" style="white-space: pre" font-family="Poppins" font-size="24" font-style="italic" font-weight="800" letter-spacing="0em"><tspan x="-0.664062" y="17.4">TraqIt</tspan></text>
+<defs>
+<linearGradient id="paint0_linear" x1="-1" y1="9" x2="75" y2="9" gradientUnits="userSpaceOnUse">
+<stop stop-color="#CAE8FE"/>
+<stop offset="1" stop-color="#88BAE3"/>
+</linearGradient>
+</defs>
+</svg>
