@@ -8,6 +8,7 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
+import { COLORS, ICONS } from "../constant";
 
 const onBoardingScreen = ({ navigation }) => {
   return (
@@ -26,7 +27,7 @@ const onBoardingScreen = ({ navigation }) => {
 
       <View style={{ width: "100%", height: 200, top: "21%" }}>
         <Image
-          source={require("../assets/images/Onboard.png")}
+          source={ICONS.Onboard}
           style={{
             height: "100%",
             width: "100%",
@@ -47,7 +48,7 @@ const onBoardingScreen = ({ navigation }) => {
         onPress={() => navigation.navigate("Login")}
       >
         <LinearGradient
-          colors={["#786DF5", "#A79EFF"]}
+          colors={COLORS.gradient}
           style={{
             width: 280,
             height: 50,

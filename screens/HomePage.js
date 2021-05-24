@@ -9,10 +9,12 @@ import {
   TextInput,
 } from "react-native";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { COLORS, ICONS } from "../constant";
+import { TouchableOpacity } from "react-native-gesture-handler";
 
 const { width, height } = Dimensions.get("window");
 
-const HomePage = () => {
+const HomePage = ({ navigation }) => {
   const [data, setData] = useState([
     {
       serviceTitle: "Courier",
@@ -28,10 +30,10 @@ const HomePage = () => {
 
   return (
     <View style={styles.container}>
-      <LinearGradient colors={["#786DF5", "#A79EFF"]} style={styles.top}>
+      <LinearGradient colors={COLORS.gradient} style={styles.top}>
         <View style={styles.imageContainer}>
           <Image
-            source={require("../assets/images/Motor.png")}
+            source={ICONS.Motor}
             style={{ width: "90%", height: "100%", top: height / 12 }}
             resizeMode="contain"
           />
@@ -41,9 +43,15 @@ const HomePage = () => {
 
         <View style={styles.topContentContainer}>
           <View style={styles.contentHeader}>
-            <View style={styles.headerIcon}>
-              <MaterialCommunityIcons name="menu-open" size={40} color="#fff" />
-            </View>
+            <TouchableOpacity onPress={() => navigation.toggleDrawer()}>
+              <View style={styles.headerIcon}>
+                <MaterialCommunityIcons
+                  name="menu-open"
+                  size={40}
+                  color="#fff"
+                />
+              </View>
+            </TouchableOpacity>
             <View style={styles.headerText}>
               <Text style={{ fontSize: 30, fontWeight: "bold" }}>Traqit</Text>
             </View>
@@ -100,7 +108,7 @@ const HomePage = () => {
                 <View key={index} style={styles.serviceCard}>
                   <LinearGradient
                     style={styles.serviceImage}
-                    colors={["#786df5", "#a79eff"]}
+                    colors={COLORS.gradient}
                   >
                     <Image
                       source={data.serviceImage}
@@ -211,7 +219,7 @@ const styles = StyleSheet.create({
   },
 
   viewText: {
-    color: "#FF4040",
+    color: COLORS.orange,
     fontSize: 20,
     fontWeight: "bold",
     marginRight: 10,
@@ -220,7 +228,7 @@ const styles = StyleSheet.create({
   viewIcon: {
     width: 20,
     height: 20,
-    backgroundColor: "#FF4040",
+    backgroundColor: COLORS.orange,
     borderRadius: 10,
     justifyContent: "center",
     alignItems: "center",

@@ -1,3 +1,4 @@
+import { LinearGradient } from "expo-linear-gradient";
 import React from "react";
 import {
   Image,
@@ -7,6 +8,7 @@ import {
   TouchableOpacity,
   View,
 } from "react-native";
+import { COLORS, ICONS } from "../constant";
 
 const Login = ({ navigation }) => {
   return (
@@ -37,14 +39,14 @@ const Login = ({ navigation }) => {
       >
         <View style={styles.externalLogin}>
           <Image
-            source={require("../assets/images/facebook.png")}
+            source={ICONS.facebook}
             style={{ width: "50%", height: "50%" }}
             resizeMode="center"
           />
         </View>
         <View style={styles.externalLogin}>
           <Image
-            source={require("../assets/images/search.png")}
+            source={ICONS.search}
             style={{ width: "50%", height: "50%" }}
             resizeMode="center"
           />
@@ -71,11 +73,20 @@ const Login = ({ navigation }) => {
 
       <TouchableOpacity
         style={styles.signInButton}
-        onPress={() => navigation.navigate("HomePage")}
+        onPress={() => navigation.navigate("Drawer")}
       >
-        <View>
+        <LinearGradient
+          colors={COLORS.gradient}
+          style={{
+            width: "100%",
+            height: "100%",
+            justifyContent: "center",
+            alignItems: "center",
+            borderRadius: 20,
+          }}
+        >
           <Text style={{ fontSize: 17, color: "#fff" }}>Sign In</Text>
-        </View>
+        </LinearGradient>
       </TouchableOpacity>
 
       <View style={styles.registerButton}>
@@ -115,10 +126,8 @@ const styles = StyleSheet.create({
 
   signInButton: {
     top: "35%",
-    width: "80%",
-    height: "7%",
-    backgroundColor: "#A79EFF",
-    borderRadius: 20,
+    width: "85%",
+    height: 50,
     justifyContent: "center",
     alignItems: "center",
   },
